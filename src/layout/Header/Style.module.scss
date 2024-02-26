@@ -1,0 +1,36 @@
+
+    .searchInput {
+        display: flex;
+        align-items: center;
+        background-color: #fafafc;
+        height: 54px;
+        padding: 10px 30px 10px 10px;
+        border-radius: 10px;
+        border: 1px solid #e4e4eb;
+        justify-content: space-between;
+    }
+
+    .input {
+        border: none;
+        border-left: 1px solid #d5d5d8;
+        outline: none;
+        background-color: #fafafc;
+        color:#c7c9d9;
+        font-size: 13px;
+        padding: 0px 0px 0px 80px;
+    }
+    .text {
+        font-size: 13px;
+        color:#555770;
+      }
+      .submit {
+        font-size: 14px;
+        background-color: #3e7bfa;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 22px;
+    }
+    .submit:hover {
+        background-color: darken(#3e7bfa, 10%);
+
+    }

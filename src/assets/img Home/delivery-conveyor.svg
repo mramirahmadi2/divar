@@ -1,0 +1,9 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" name="Categories/delivery-conveyor.svg">
+                <rect x="10" y="5" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.5"></rect>
+                <rect x="3.333" y="25" width="33.333" height="10" rx="3" stroke="currentColor" stroke-width="1.5">
+                </rect>
+                <circle cx="28.333" cy="30" fill="currentColor" r="1.667"></circle>
+                <circle cx="20" cy="30" r="1.667" fill="currentColor"></circle>
+                <circle cx="11.667" cy="30" fill="currentColor" r="1.667"></circle>
+                <path d="M21.667 10h-3.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
