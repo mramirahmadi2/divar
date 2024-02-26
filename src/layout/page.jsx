@@ -6,7 +6,7 @@ const page = ({ children }) => {
     <div className='flex flex-col  h-screen justify-between'>
       <div>
            <Header/>
-           <div className='max-w-7xl mx-auto'>
+           <div className='max-w-7xl mx-auto de:mt-28'>
              { children }
            </div>
       </div>

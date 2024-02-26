@@ -7,7 +7,7 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 const page = () => {
   return (
-    <div className='w-[100vw] fixed h-auto bg-white'>
+    <div className='w-[100vw] fixed h-auto bg-white z-50'>
      <div className='max-w-[85rem] mx-auto flex flex-col border-b-2 mt-4 pb-4 '>
        <div className='flex flex-row  item-center justify-between '>
         <div className='cursor-pointer flex flex-row items-center mr-4' >
