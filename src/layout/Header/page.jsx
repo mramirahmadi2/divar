@@ -11,7 +11,7 @@ const page = () => {
      <div className='max-w-[85rem] mx-auto flex flex-col border-b-2 mt-4 pb-4 '>
        <div className='flex flex-row  item-center justify-between '>
         <div className='cursor-pointer flex flex-row items-center mr-4' >
-          <h3>لوگو</h3>
+          <Link href={"/"}><h3>لوگو</h3></Link> 
           <div className='mo:hidden'>
             <span className={`${Style.searchInput} mr-5 `} >
              {/* <input class="input" type="text" name="" id="" placeholder="جستجو کنید"/> */}

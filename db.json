@@ -1,6 +1,6 @@
 {
     "posts":[
-        {"id":"1","title":" فروش آپارتمان 121 متر در شهید شریفی","city":"بابلسر","location":"شهید شرفی", "price":"۴,۶۰۰,۰۰۰,۰۰۰" },
+        {"id":"1","title":" 105فروش آپارتمان 121 متر در شهید شریفی","city":"بابلسر","location":"شهید شرفی", "price":"۴,۶۰۰,۰۰۰,۰۰۰" },
         {"id":"2","title":" فروش آپارتمان 121 متر در شهید شریفی","city":"بابلسر","location":"شهید شرفی", "price":"۴,۶۰۰,۰۰۰,۰۰۰"},
         {"id":"3","title":" فروش آپارتمان 121 متر در شهید شریفی","city":"بابلسر","location":"شهید شرفی", "price":"۴,۶۰۰,۰۰۰,۰۰۰"},
         {"id":"4","title":" فروش آپارتمان 121 متر در شهید شریفی","city":"بابلسر","location":"شهید شرفی", "price":"۴,۶۰۰,۰۰۰,۰۰۰"},
@@ -61,7 +61,7 @@
                 {"id": "12", "title": "سایر وسایل نقلیه"}
             ],
             "customizeFilter":[
-                {"id":"1","min-YearOfConstruction":"1370","max-YearOfConstruction":"1402","input":"select"}
+                {"id":"1","min":"1370","max":"1402","input":"select"}
             ]
         },
         {
@@ -80,7 +80,7 @@
                 {"id": "10", "title": "سایر املاک"}
             ],
             "customizeFilter":[
-                {"id":"1","min-metra":"50","max-metra":"1000","input":"select"}
+                {"id":"1","Unit":"متر","min":"50","max":"1000","input":"select"}
             ]
         },
         {"id":"3","title":"استخدام","filters": [
@@ -115,7 +115,7 @@
             {"id": "29", "title": "مشاغل دیگر"}
         ],
         "customizeFilter":[
-            {"id":"1","min-salary":"7300000","max-salary":"45000000","input":"select"}
+            {"id":"1","min":"7300000","max":"45000000","input":"select"}
         ]
     },
         {
@@ -146,7 +146,7 @@
                 {"id": "22", "title": "سایر خدمات"}
             ],
             "customizeFilter":[
-                {"id":"1","min-salary":"7300000","max-salary":"45000000","input":"select"}
+                {"id":"1","min":"7300000","max":"45000000","input":"select"}
             ]
         }
         ,
@@ -165,7 +165,7 @@
                 {"id": "9", "title": "سایر لوازم خانه و حیاط"}
             ],
             "customizeFilter":[
-                {"id":"1","min-salary":"7300000","max-salary":"45000000","input":"select"}
+                {"id":"1","min":"7300000","max":"45000000","input":"select"}
             ]
         },
         {
@@ -185,7 +185,7 @@
                 {"id": "11", "title": "سایر سرگرمی ها"}
             ],
             "customizeFilter":[
-                {"id":"1","min-salary":"7300000","max-salary":"45000000","input":"select"}
+                {"id":"1","min":"7300000","max":"45000000","input":"select"}
             ]
         }
         ,
@@ -203,7 +203,7 @@
                 {"id": "8", "title": "سایر لوازم الکترونیکی"}
             ],
             "customizeFilter":[
-                {"id":"1","min-salary":"7300000","max-salary":"45000000","input":"select"}
+                {"id":"1","min":"7300000","max":"45000000","input":"select"}
             ]
         }
         ,
@@ -224,7 +224,7 @@
                 {"id": "11", "title": "دیگر"}
             ],
             "customizeFilter":[
-                {"id":"1","min-salary":"7300000","max-salary":"45000000","input":"select"}
+                {"id":"1","min":"7300000","max":"45000000","input":"select"}
             ]
         }
     ],
