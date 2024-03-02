@@ -1,22 +1,31 @@
 "use client"
-import { useEffect, useRef, useState, Fragment } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import vehicle2 from "@/assets/img Home/vehicle2.svg";
+import RealEstate from "@/assets/img Home/RealEstate.svg";
+import briefcaseType from "@/assets/img Home/briefcaseType.svg";
+import briefcasecat from "@/assets/img Home/briefcasecat.svg";
 import homeStaff from "@/assets/img Home/homeStaff.svg";
+import Sunshade from '@/assets/img Home/Sunshade.svg';
+import iMacSys from "@/assets/img Home/iMacSys.svg";
+import deliveryConveyor from "@/assets/img Home/delivery-conveyor.svg";
 import Image from 'next/image';
 import axios from 'axios';
-import { Dialog, Transition } from '@headlessui/react'
-import Link from 'next/link';
 
 export default function Example() {
   const [state, setState] = useState(null);
   const [menu, setMenu] = useState([]);
   const modalRef = useRef(null);
- 
-  let [isOpen, setIsOpen] = useState(false)
-
-  function closeModal() {
-    setIsOpen(false)
-  }
-
+  const Menu = [
+    { title: "وسایل نقلیه", icon: vehicle2, id:1 },
+    { title: "املاک", icon: RealEstate, id:2 },
+    { title: "استخدام", icon: briefcaseType, id:3 },
+    { title: "خدمات کسب و کار", icon: briefcasecat, id:4 },
+    { title: "لوازم خانگی", icon: homeStaff, id:5 },
+    { title: "ورزش فرهنگ فراغت", icon: Sunshade, id:6 },
+    { title: "لوازم الکترونیکی", icon: iMacSys, id:7 },
+    { title: "صنعتی اداری و تجاری", icon: deliveryConveyor, id:8 }
+  ];
+  
   useEffect(() => {
     axios.get('http://localhost:8000/category')
       .then(response => {
@@ -26,85 +35,45 @@ export default function Example() {
         console.error('Error fetching menu data:', error);
       });
   }, []);
-console.log(menu);
 
+  const item = menu.find(item => item.id === state);
+  const filters = item ? item.filters : null;
+
+  console.log("filters", item);
+  
   return (
     <>
       <ul className='flex flex-row mo:flex-col flex-wrap justify-center items-center'>
-        {menu?.map((item:any, index) => (
+        {Menu.map((item, index) => (
           <li key={item.id} 
             onClick={() => {
-              // modalRef.current.showModal();
-              setState(item);
-              setIsOpen(true)
+              modalRef.current.showModal();
+              setState(item.id);
             }}
             className='text-[14px] text-[#555770] px-[8px] mx-1 items-center py-2 bg-[#f2f2f5] rounded-full mo:w-4/5 mo:text-center cursor-pointer flex flex-row mo:items-center mo:justify-center mt-3'>
-            <Image src={homeStaff} width={24} height={24} alt={item.title} />
+            <Image src={item.icon} width={24} height={24} alt={item.title} />
             <div className='mr-2'>{item.title}</div>
           </li>
         ))}
       </ul>
-      <Transition appear show={isOpen} as={Fragment} >
-        <Dialog as="div" className="relative z-10" onClose={closeModal} >
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black/25" />
-          </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto " >
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg font-medium leading-6 text-right text-gray-900"
-                  >
-                    {state?.title}
-                  </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-right cursor-pointer text-gray-500">
-                     <ul>
-                      {
-                        state?.filters?.map((item:any)=>(
-                            <li key={item.id}>
-                             <Link href={`/${state.title}/${item.title}`}>{item.title}</Link>  
-                            </li>
-                        ))
-                      }
-                     </ul>
-                    </p>
-                  </div>
-
-                  <div className="mt-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
-                    >
-                      بستن 
-                    </button>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition>
+      <dialog ref={modalRef} className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">
+            {item ? item.title : ''}
+          </h3>
+          <p className="py-4">
+            "ok"
+          </p>
+          <form method="dialog" className="modal-action">
+            {/* if there is a button in form, it will close the modal */}
+            <button className="btn">Close</button>
+          </form>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
     </>
   );
 }
