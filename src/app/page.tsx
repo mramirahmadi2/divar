@@ -1,5 +1,5 @@
 import Posts from '@/components/posts'
-import CheckBox from '@/components/CheckBox'
+// import CheckBox from '@/components/CheckBox'
 import Dialog  from '@/components/Dialog'
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
             <div className="  mo:mt-40">
                <Dialog  />
             <div>
-               <CheckBox/>
+               {/* <CheckBox/> */}
             </div>
             <div className='mt-5'>
                     <h2 className='text-[20px] mb-4 font-medium pr-4'>آگهی های جدید در همه ایران</h2>
